@@ -7,6 +7,11 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: () => import('../views/v-main.vue')
+    },
+    {
+      path: '/reserva',
+      name: 'reserva',
+      component: () => import('../views/v-reserva.vue')
     }
   ]
 })
