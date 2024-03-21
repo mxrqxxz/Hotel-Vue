@@ -1,10 +1,10 @@
 <template>
-    <input class="c-text-field" v-bind="$attrs" @input="updateValue" :value="modelValue">
+    <input class="c-radio-field" v-bind="$attrs" @input="updateValue">
 </template>
 
 <script>
 export default {
-    name: 'c-text-field',
+    name: 'c-radio-field',
     props: {
         modelValue: {
             type: String,
@@ -20,8 +20,8 @@ export default {
 }
 </script>
 
-<style>
-.c-text-field {
+<style scoped>
+.c-radio-field {
     border: 1px solid black;
     border-radius: 10px;
 }

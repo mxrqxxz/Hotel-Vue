@@ -1,18 +1,23 @@
 <template>
     <nav>
         <ul>
-            <li>Home</li>
+            <li><RouterLink to="/">Inicio</RouterLink></li>
             <li>|</li>
-            <li>Reserva</li>
+            <li><RouterLink to="/reserva">Reserva</RouterLink></li>
             <li>|</li>
-            <li>Zona administrativa</li>
+            <li><RouterLink to="/administracion">Administración</RouterLink></li>
         </ul>
     </nav>
 </template>
 
 <script>
+import { RouterLink } from 'vue-router';
+
 export default {
     name: 'c-navbar',
+    components: {
+        RouterLink
+    }
 }
 </script>
 
@@ -38,5 +43,10 @@ export default {
 
     nav {
         border: 1px solid black;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
     }
 </style>

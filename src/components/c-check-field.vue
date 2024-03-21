@@ -1,27 +1,27 @@
 <template>
-    <input class="c-text-field" v-bind="$attrs" @input="updateValue" :value="modelValue">
+    <input class="c-check-field" v-bind="$attrs" @input="updateValue">
 </template>
 
 <script>
 export default {
-    name: 'c-text-field',
+    name: 'c-check-field',
     props: {
         modelValue: {
-            type: String,
-            default: '',
+            type: Boolean,
+            default: false,
             required: true
         }
     },
     methods: {
-        updateValue(event) {
-            this.$emit('update:modelValue', event.target.value);
+        updateValue() {
+            this.$emit('update:modelValue', !this.modelValue);
         }
     }
 }
 </script>
 
-<style>
-.c-text-field {
+<style scoped>
+.c-check-field {
     border: 1px solid black;
     border-radius: 10px;
 }

@@ -22,7 +22,7 @@
 </script>
 
 <style>
-    .parallax {
+    .l-main .parallax {
         z-index: -1;
         background-image: url("../assets/hotel1.jpg");
         background-repeat: no-repeat;
@@ -41,7 +41,7 @@
         }
     }
 
-    .parallax h1, .parallax p {
+    .l-main .parallax h1, .l-main .parallax p {
         background-color: white;
         margin: 10px;
         border-radius: 20px;
@@ -49,12 +49,11 @@
         font-weight: 700;
     }
 
-    .header {
-        border: 1px solid black;
+    .l-main .header {
         max-height: 30vh;
     }
 
-    .content {
+    .l-main .content {
         display: flex;
     }
 </style>
