@@ -85,7 +85,7 @@ export default {
   methods: {
 
     enviar() {
-      this.$store.dispatch('sendData', {
+      this.$store.dispatch('reservas/sendData', {
         nombre: this.nombre,
         apellido: this.apellido,
         email: this.email,

@@ -16,7 +16,7 @@
   import LLogin from '../layouts/l-login.vue';
   import CTextField from '@/components/c-text-field.vue';
   import CButton from '@/components/c-button.vue';
-  
+
   export default {
     name: 'v-login',
     components: {
@@ -41,8 +41,9 @@
       },
 
       login(){
-        // TODO: llamar al metodo de la store
-        // pasando el username y el password a través de un objeto
+        this.$store.dispatch('users/login', {user: this.username, password: this.password}).then(
+          this.$router.push('/administracion')
+        );
       }
     }
   }

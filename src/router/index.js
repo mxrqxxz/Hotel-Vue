@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { store } from '../state/stores/index'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -28,9 +29,12 @@ const router = createRouter({
 
 router.beforeEach((to, _, next) => {
   if (to.name === 'administracion'){
-    //TODO: Comprobar si el usuario está logueado desde el getter ya hecho en la store
-    //next('/login');
-    next();
+    const autenticado = store.getters['users/logueado'];
+    if (autenticado){
+      next();
+    } else {
+      next('/login');
+    }
   } else {
     next();
   }
